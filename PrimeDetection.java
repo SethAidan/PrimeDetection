@@ -10,6 +10,8 @@ import java.util.Arrays;
 
 class PrimeDetection{
     public static void main(String[] args){
+        //Declare constants
+        String[] testModeValidStrings = {"check","generate","arb"};
         // Declare global attributes
         String testMode;
 
@@ -22,7 +24,7 @@ class PrimeDetection{
         System.out.println("You may either : ");
         System.out.println("check -> Enter a number and return whether is is prime, or,");
         System.out.println("generate -> Enter a range and receive all prime numbers in that range.\n");
-        testMode = inputStr(new String[]{"check","generate","arb"}, "Would you like to 'check', or 'generate' : ");
+        testMode = inputStr(testModeValidStrings, "Would you like to 'check', or 'generate' : ");
 
         // Call the appropriate subroutine depending on testMode
         switch(testMode){
@@ -33,6 +35,7 @@ class PrimeDetection{
                 gen();
                 break;
             default:
+                // Should never occur - exists for maintainability
                 throw new UnacceptableInputException("User should not be able to enter a value other than 'check', or 'generate'");
         }
         
@@ -55,6 +58,9 @@ class PrimeDetection{
         return inp;
     }
 
+    /*
+     * Identifies whether a number is prime or not
+     */
     public static void check(){}
 
     public static void gen(){}
