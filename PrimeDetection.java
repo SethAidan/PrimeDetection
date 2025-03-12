@@ -6,6 +6,11 @@
  * ... Or by inputting a range of numbers and returning all the prime numbers in that range
  */
 
+ import java.util.ArrayList;
+ import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 class PrimeDetection{
     public static void main(String[] args){
         //Declare constants
@@ -77,5 +82,32 @@ class PrimeDetection{
      * Iterate from 2 to sqrt(N) and eliminate all vlues that are a multiple of i
      * All remaining values are prime 
      */
-    public static void gen(){}
+    public static void gen(){
+        System.out.println("Please enter the range over which you would like to generate a list of prime numbers:");
+        int min = InputHandling.inputIntAny("Enter the lowest value in the range : ");
+        List<Integer> primes = new ArrayList<Integer>();
+
+        // Prime numbers cannot be less than 2
+        if(min < 2){
+            min = 2;
+        }
+
+        // Generate a list of all integers in the given range
+        int max = InputHandling.inputIntRng("Enter the largest value in the range : ", min, Integer.MAX_VALUE);
+        primes = IntStream.range(min, max).boxed().collect(Collectors.toList());
+
+        // Iterate through every integer from 2 to the sqrt of the maximum
+        for(int i = 2; i <= Math.sqrt(max); i++){
+            for(int j = i*i; j <= max; j+= i){
+                primes.remove(Integer.valueOf(j)); // Must use valueOf or java will assume j is an index
+            }
+        }
+
+        // Output remaining prime numbers
+        System.out.println(String.format("The prime numbers in the range %d to %d are:", min, max));
+        for(int primNum: primes){
+            System.out.println(primNum);
+        }
+
+    }
 }
