@@ -45,8 +45,39 @@ class PrimeDetection{
      * Identifies whether a number is prime or not
      */
     public static void check(){
-        int numToCheck = 0;
+        int numToCheck = InputHandling.inputIntAny("Enter the number you want to check : ");
+        Boolean prime = true;
+        int i = 2;
+
+        // No number less than or equal to 1 is prime
+        if(numToCheck <= 1){
+            prime = false;
+        }
+        else{
+            // Loop from 2 to the sqrt of numToCheck
+            while(i*i <= numToCheck){
+                // If the number has even a single factor in this range it cnnot be prime
+                if(numToCheck % i == 0){
+                    prime = false;
+                    break; // No need to continue iterating if a factor is found
+                }
+                i+=1;
+            }
+            // If no factor is found in that range then the number is prime
+        }
+
+        if(prime){
+            System.out.println(String.format("%d is a prime number", numToCheck));
+        }
+        else{
+            System.out.println(String.format("%d is not a prime number", numToCheck));
+        }
     }
 
+    /*
+     * Find all the prime numbers in a range using Sieve of Eratosthenes
+     * Iterate from 2 to sqrt(N) and eliminate all vlues that are a multiple of i
+     * All remaining values are prime 
+     */
     public static void gen(){}
 }

@@ -18,6 +18,32 @@ public final class InputHandling {
     }
 
     /*
+     * Handles integer inputs in without any range specified
+     */
+    public static int inputIntAny(String inpQuestion){
+        Console keyboardConsole = System.console();
+        String keyboardRead;
+        Boolean valid;
+        int inp = 0;
+
+        // Ask the question until a valid input is given
+        do{
+            valid = false;
+            keyboardRead = keyboardConsole.readLine(inpQuestion);
+            try{
+                inp = Integer.parseInt(keyboardRead);
+                valid = true;
+            }
+            catch(NumberFormatException e){
+                System.out.println("Please enter a valid integer value");
+            }
+        } while(!valid);
+
+        return inp;
+        
+    }
+
+    /*
      * Handles integer inputs in a specific range
      */
     public static int inputIntRng(String inpQuestion, int min, int max){
