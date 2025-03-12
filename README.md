@@ -8,21 +8,21 @@ Either by checking whether a given number is prime or generating all prime numbe
  - Performs robust validation on user inputs to prevent unexpected behaviour
 
  ## How It Works
- 1. The user inputs either 'check' or 'generate' to pick which mode they would like to use.
-  - If they chose check:
-    2. User enters the number they would like to knoe the primacy of.
-    3. The input is validated to ensure it is actually a number.
-    4. All numbers less than 2 are immediately returned as non-prime.
-    5. Every number from 2 upwards is checked to see if it is a factor.
-    6. If no factors are found it is confirmed to be prime.
-    7. The user is told whether the number is prime. 
+1. The user inputs either 'check' or 'generate' to pick which mode they would like to use.
+ - If they chose check:
+2. User enters the number they would like to knoe the primacy of.
+3. The input is validated to ensure it is actually a number.
+4. All numbers less than 2 are immediately returned as non-prime.
+5. Every number from 2 upwards is checked to see if it is a factor.
+6. If no factors are found it is confirmed to be prime.
+7. The user is told whether the number is prime. 
  - If they chose generate
-    2. A minimum and maximum value are entered.
-    3. The minimum is altered to ensure it is greater than or equal to 2 (to ensure efficiency).
-    4. The maximum is validated to ensure it is greater than the minimum.
-    5. A list is generated containing every integer between the minimum and maximum.
-    6. Every value from 2 to the sqrt of the maximum is checked and any multiples of it removed from the list
-    7. Any remaining list values must be prime numbers so the list is output to the user.
+2. A minimum and maximum value are entered.
+3. The minimum is altered to ensure it is greater than or equal to 2 (to ensure efficiency).
+4. The maximum is validated to ensure it is greater than the minimum.
+5. A list is generated containing every integer between the minimum and maximum.
+6. Every value from 2 to the sqrt of the maximum is checked and any multiples of it removed from the list
+7. Any remaining list values must be prime numbers so the list is output to the user.
 
 ## Installation & Usage
 ### Prerequisites
