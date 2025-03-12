@@ -24,7 +24,7 @@ class PrimeDetection{
         System.out.println("You may either : ");
         System.out.println("check -> Enter a number and return whether is is prime, or,");
         System.out.println("generate -> Enter a range and receive all prime numbers in that range.\n");
-        testMode = inputStr(testModeValidStrings, "Would you like to 'check', or 'generate' : ");
+        testMode = InputHandling.inputStrFin(testModeValidStrings, "Would you like to 'check', or 'generate' : ");
 
         // Call the appropriate subroutine depending on testMode
         switch(testMode){
@@ -42,26 +42,11 @@ class PrimeDetection{
     }
 
     /*
-     * Take and validate inputs with a finite number of acceptable states
-     * Those states are given as parameters
-     * The question to ask is also a parameter
-     */
-    public static String inputStr(String[] validInput, String inpQuestion){
-        Console keyboardConsole = System.console();
-        String inp;
-
-        //Ask the question until a valid answer is given
-        do{
-            inp = keyboardConsole.readLine(inpQuestion);
-        } while(!Arrays.asList(validInput).contains(inp));
-
-        return inp;
-    }
-
-    /*
      * Identifies whether a number is prime or not
      */
-    public static void check(){}
+    public static void check(){
+        int numToCheck = 0;
+    }
 
     public static void gen(){}
 }
