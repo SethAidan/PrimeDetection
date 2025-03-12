@@ -5,8 +5,6 @@
  * 
  * ... Or by inputting a range of numbers and returning all the prime numbers in that range
  */
-import java.io.Console;
-import java.util.Arrays;
 
 class PrimeDetection{
     public static void main(String[] args){
